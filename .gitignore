@@ -3,3 +3,4 @@ __pycache__/
 bin/__pyachce__/
 .env
 *.txt
+*.json
