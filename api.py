@@ -1,4 +1,5 @@
 from disc import canary, stable, ptb
+from trello import update as trello
 
 from flask import Flask, request
 from flask_restful import Api, Resource, reqparse
@@ -23,6 +24,9 @@ api.add_resource(ptb.platest, "/discord/ptb/builds/latest")
 api.add_resource(stable.sbuilds, "/discord/stable/builds")
 api.add_resource(stable.sretrieve_build, "/discord/stable/builds/<string:build_num>")
 api.add_resource(stable.slatest, "/discord/stable/builds/latest")
+
+#writing trello endpoint
+api.add_resource(trello.latest, "/trello")
 
 #running and setting host port (local for nginx reverse proxy)
 app.run(host='127.0.0.1', port=1337)
